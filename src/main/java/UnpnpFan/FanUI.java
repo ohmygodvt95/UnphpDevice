@@ -48,8 +48,8 @@ public class FanUI extends JFrame implements PropertyChangeListener, ActionListe
     private UDN udn = new UDN(UUID.randomUUID());
     private JButton but;
     private JLabel label;
-    final String friendlyName = "Quyen Quat";
-    final String manufacturerDetails = "Team lay loi";
+    final String friendlyName = "Fan";
+    final String manufacturerDetails = "Team TQD";
     
     public FanUI() {
         init();
@@ -114,11 +114,11 @@ public class FanUI extends JFrame implements PropertyChangeListener, ActionListe
     }
 
     protected LocalDevice createDevice() throws org.fourthline.cling.model.ValidationException {
-        DeviceType type = new UDADeviceType("SmartQuat", 1);
+        DeviceType type = new UDADeviceType("SmartFan", 1);
 
         DeviceDetails details = new DeviceDetails(friendlyName,
                 new ManufacturerDetails(manufacturerDetails),
-                new ModelDetails("SmartQuat", "Quat thong minh", "v1"));
+                new ModelDetails("SmartFan", "Fan Unpnp", "v1"));
 
         LocalService service = new AnnotationLocalServiceBinder().read(SwitchStatus.class);
         service.setManager(new DefaultServiceManager<>(service, SwitchStatus.class));

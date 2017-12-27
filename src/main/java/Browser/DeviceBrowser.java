@@ -32,7 +32,9 @@ public class DeviceBrowser {
     Controller controller = new Controller();
     boolean checkK = false;
     boolean checkR = false;
-
+    final String QUAT = "Fan";
+    final String DIEUHOA = "AirConditioner";
+    
     public DeviceBrowser() {
         upnpService = new UpnpServiceImpl(listener);
         upnpService.getControlPoint().search(new STAllHeader());
@@ -161,7 +163,4 @@ public class DeviceBrowser {
     public static void main(String[] args) {
         new DeviceBrowser();
     }
-
-    final String QUAT = "Quyen Quat";
-    final String DIEUHOA = "Quyen Dieu Hoa";
 }

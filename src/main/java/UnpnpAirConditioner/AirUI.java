@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UnpnpAirConditional;
+package UnpnpAirConditioner;
 
 import Image.AutoResizeIcon;
 import java.awt.event.ActionEvent;
@@ -49,8 +49,8 @@ public class AirUI extends JFrame implements PropertyChangeListener, ActionListe
     private UDN udn = new UDN(UUID.randomUUID());
     private JButton but;
     private JLabel label;
-    final String friendlyName = "Quyen Dieu Hoa";
-    final String manufacturerDetails = "Team lay loi";
+    final String friendlyName = "AirConditioner";
+    final String manufacturerDetails = "Team TQD";
     
     public AirUI() {
         init();
@@ -115,11 +115,11 @@ public class AirUI extends JFrame implements PropertyChangeListener, ActionListe
     }
 
     protected LocalDevice createDevice() throws org.fourthline.cling.model.ValidationException {
-        DeviceType type = new UDADeviceType("SmartDieuHoa", 1);
+        DeviceType type = new UDADeviceType("SmartAirConditioner", 1);
 
         DeviceDetails details = new DeviceDetails(friendlyName,
                 new ManufacturerDetails(manufacturerDetails),
-                new ModelDetails("SmartDieuHoa", "Dieu Hoa thong minh", "v1"));
+                new ModelDetails("SmartAirConditioner", "SmartAirConditioner", "v1"));
 
         LocalService service = new AnnotationLocalServiceBinder().read(SwitchStatus.class);
         service.setManager(new DefaultServiceManager<>(service, SwitchStatus.class));

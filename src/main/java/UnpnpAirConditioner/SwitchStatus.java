@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UnpnpAirConditional;
+package UnpnpAirConditioner;
 
 import java.beans.PropertyChangeSupport;
 import org.fourthline.cling.binding.annotations.UpnpAction;
