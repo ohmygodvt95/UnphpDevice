@@ -83,9 +83,6 @@ public class DeviceBrowser {
                             StateVariableValue status = values.get("Status");
                             int value = Integer.parseInt(status.toString());
                             if (deviceR != null) {
-                                if (value == 0) {
-                                    controller.setStatus(deviceR, upnpService, true);
-                                }
                                 if (value == 1) {
                                     controller.setStatus(deviceR, upnpService, false);
                                 }
@@ -102,9 +99,6 @@ public class DeviceBrowser {
                             StateVariableValue status = values.get("Status");
                             int value = Integer.parseInt(status.toString());
                             if (deviceK != null) {
-                                if (value == 0) {
-                                    controller.setStatus(deviceK, upnpService, true);
-                                }
                                 if (value == 1) {
                                     controller.setStatus(deviceK, upnpService, false);
                                 }
