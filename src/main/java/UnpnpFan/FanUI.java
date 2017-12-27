@@ -5,7 +5,7 @@
  */
 package UnpnpFan;
 
-import img.AutoResizeIcon;
+import Image.AutoResizeIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -48,7 +48,9 @@ public class FanUI extends JFrame implements PropertyChangeListener, ActionListe
     private UDN udn = new UDN(UUID.randomUUID());
     private JButton but;
     private JLabel label;
-
+    final String friendlyName = "Quyen Quat";
+    final String manufacturerDetails = "Team lay loi";
+    
     public FanUI() {
         init();
         onCreate();
@@ -125,9 +127,6 @@ public class FanUI extends JFrame implements PropertyChangeListener, ActionListe
         return device;
     }
 
-    final String friendlyName = "Quyen Quat";
-    final String manufacturerDetails = "Team lay loi";
-
     private void onCreate() {
         onServiceConnection();
     }
@@ -167,7 +166,7 @@ public class FanUI extends JFrame implements PropertyChangeListener, ActionListe
 
     protected Icon createDefaultDeviceIcon() {
         try {
-            File file = new File("src/img/quaticon.JPG");
+            File file = new File(getClass().getResource("/quaticon.JPG").getPath().toString());
             return new Icon("image/jpg", 48, 48, 8, file);
         } catch (IOException ex) {
             Logger.getLogger(FanUI.class.getName()).log(Level.SEVERE, null, ex);

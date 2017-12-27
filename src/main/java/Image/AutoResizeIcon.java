@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package img;
+package Image;
 
-import Controllers.Controller;
+import Controller.Controller;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -49,7 +49,7 @@ public class AutoResizeIcon {
     public static void setIcon(JButton label, String fileName)
     {
         try {
-            BufferedImage image = ImageIO.read(AutoResizeIcon.class.getClassLoader().getResource(fileName));
+            BufferedImage image = ImageIO.read(Controller.class.getResource("/" + fileName));
             int x =label.getSize().width;
             int y =label.getSize().height;
             int ix =image.getWidth();

@@ -5,8 +5,7 @@
  */
 package UnpnpAirConditional;
 
-import Controllers.Controller;
-import img.AutoResizeIcon;
+import Image.AutoResizeIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -18,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
@@ -49,7 +49,9 @@ public class AirUI extends JFrame implements PropertyChangeListener, ActionListe
     private UDN udn = new UDN(UUID.randomUUID());
     private JButton but;
     private JLabel label;
-
+    final String friendlyName = "Quyen Dieu Hoa";
+    final String manufacturerDetails = "Team lay loi";
+    
     public AirUI() {
         init();
         onCreate();
@@ -126,9 +128,6 @@ public class AirUI extends JFrame implements PropertyChangeListener, ActionListe
         return device;
     }
 
-    final String friendlyName = "Quyen Dieu Hoa";
-    final String manufacturerDetails = "Team lay loi";
-
     private void onCreate() {
         onServiceConnection();
     }
@@ -168,10 +167,7 @@ public class AirUI extends JFrame implements PropertyChangeListener, ActionListe
 
     protected Icon createDefaultDeviceIcon() {
         try {
-            System.out.println("######");
-            System.out.println(getClass().getResource("/../dieuhoadong.png").toString());
-            System.out.println("######");
-            File file = new File(getClass().getResource("/../dieuhoadong.png").toString());
+            File file = new File(getClass().getResource("/dieuhoaicon.png").getPath().toString());
             return new Icon("image/jpg", 48, 48, 8, file);
         } catch (IOException ex) {
             Logger.getLogger(AirUI.class.getName()).log(Level.SEVERE, null, ex);
